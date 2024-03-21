@@ -4,9 +4,15 @@ import App from './App.tsx'
 import './App.css'
 import { RouterProvider } from 'react-router-dom'
 import OfflineRouter from './router/OfflineRouter.tsx'
+import { AuthContextProvider } from './contexts/AuthContext.tsx'
+import { SessionContextProvider } from './contexts/SessionContext.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <AuthContextProvider>
+      <SessionContextProvider>
+        <App />
+      </SessionContextProvider >
+    </ AuthContextProvider>
+  </React.StrictMode >,
 )
