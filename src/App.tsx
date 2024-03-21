@@ -1,14 +1,11 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { useAuthContext } from './contexts/AuthContext'
-
 
 const App: React.FC = () => {
-  const { signIn } = useAuthContext()
-  console.log(signIn)
+
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
+      <h1 className="text-red-500 text-3xl font-bold underline">
         Hello world!
       </h1>
       <Outlet />
