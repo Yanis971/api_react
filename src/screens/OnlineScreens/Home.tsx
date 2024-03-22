@@ -4,6 +4,7 @@ import { AppDispatch } from '../../redux/store';
 import { fetchNotes } from '../../redux/note/noteSlice';
 import { selectNoteData } from '../../redux/note/noteSelector';
 import PageLoader from '../../components/Loader/PageLoader';
+import { BsTrash } from 'react-icons/bs';
 
 
 const Home: React.FC = () => {
@@ -32,6 +33,7 @@ const Home: React.FC = () => {
                   <p className='text-brown_dark text-sm '>
                     {new Date(note.createdAt).toLocaleDateString()}
                   </p>
+                  <BsTrash onClick={() => { }} className='text-red_dark h-5 w-5 cursor-pointer' />
                 </div>
               </div>
             </div>
