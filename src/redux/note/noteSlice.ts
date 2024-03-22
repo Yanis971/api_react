@@ -5,6 +5,7 @@ import { RootState } from "../store";
 
 //on définit la stucture de l'objet Note
 interface Note {
+  id: number;
   title: string;
   description: string;
   user: string;
@@ -12,7 +13,7 @@ interface Note {
 }
 
 //on définit la structure de hydra:member
-interface HydraResponse<T>{
+interface HydraResponse<T> {
   'hydra:member': T[];
 }
 
@@ -33,7 +34,7 @@ const noteSlice = createSlice({
   name: 'note',
   initialState,
   reducers: {
-    setNotes: (state, action:PayloadAction<HydraResponse<Note>>) => {
+    setNotes: (state, action: PayloadAction<HydraResponse<Note>>) => {
       state.notes = action.payload['hydra:member'];
     },
     setLoading: (state, action: PayloadAction<boolean>) => {
